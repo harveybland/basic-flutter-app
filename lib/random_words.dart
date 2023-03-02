@@ -33,7 +33,7 @@ class RandomWordsState extends State<RandomWords> {
     return ListTile(
       title: Text(pair.asPascalCase, style: TextStyle(fontSize: 18.0)),
       trailing: Icon(alreadySaved ? Icons.favorite : Icons.favorite_border,
-          color: alreadySaved ? Colors.red : null),
+          color: alreadySaved ? Colors.greenAccent : null),
       onTap: () => {
         setState(() {
           if (alreadySaved) {
@@ -51,7 +51,7 @@ class RandomWordsState extends State<RandomWords> {
         .push(MaterialPageRoute(builder: (BuildContext context) {
       final Iterable<ListTile> tiles = _savedWordPairs.map((WordPair pair) {
         return ListTile(
-            title: Text(pair.asPascalCase, style: TextStyle(fontSize: 16.0)));
+            title: Text(pair.asPascalCase, style: TextStyle(fontSize: 40.0)));
       });
       final List<Widget> divided =
           ListTile.divideTiles(context: context, tiles: tiles).toList();
